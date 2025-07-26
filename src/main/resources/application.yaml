@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: demo
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/taskdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: taskuser
+    password: taskpass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+rocketmq:
+  name-server: host.docker.internal:9876
+  producer:
+    group: rate-limit-producer-group
+    send-message-timeout: 3000
+    retry-times-when-send-failed: 2
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.example.demo: DEBUG
+
