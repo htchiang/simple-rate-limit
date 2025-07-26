@@ -15,7 +15,7 @@ spring:
       host: localhost
       port: 6379
 rocketmq:
-  name-server: host.docker.internal:9876
+  name-server: localhost:9876
   producer:
     group: rate-limit-producer-group
     send-message-timeout: 3000
